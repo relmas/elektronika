@@ -24,13 +24,13 @@ function changeUILang(param) {
 function changeDBLang(param) {
     switch (param) {
         case "german":
-            loadAllData("trafficsign-de.json");
+            loadAllData("trafficsign-en.json");
             break;
         case "english":
             loadAllData("trafficsign-en.json");
             break;
         case "s-chinese":
-            loadAllData("trafficsign-cn.json");
+            loadAllData("trafficsign-en.json");
             break;
         case "t-chinese":
             break;
@@ -42,21 +42,21 @@ function changeDBLang(param) {
 
 function openMail() {
     var a = document.createElement('a');
-    a.setAttribute("href", 'mailto:vzguru@ojins.com');
+    a.setAttribute("href", 'mailto:info@elmaspc.com');
     a.setAttribute("target", "_blank");
     fireClick(a);
 }
 
 function openOjins() {
     var a = document.createElement('a');
-    a.setAttribute("href", 'http://ojins.com');
+    a.setAttribute("href", 'market://search?q=pub:Elmas+Yaz%C4%B1l%C4%B1m');
     a.setAttribute("target", "_blank");
     fireClick(a);
 }
 
 function openAppRate() {
     var a = document.createElement('a');
-    a.setAttribute("href", 'itms-apps://itunes.apple.com/app/id1041784760');
+    a.setAttribute("href", 'market://details?id=com.elmasyazilim.balonpatlat');
     a.setAttribute("target", "_blank");
     fireClick(a);
 }

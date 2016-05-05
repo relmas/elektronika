@@ -5,7 +5,7 @@
 // Initialize your app
 var myApp = new Framework7({
     // Default title for modals
-    modalTitle: 'VZ Guru',
+    modalTitle: 'VZ',
 
     // If it is webapp, we can enable hash navigation:
     pushState: true,
@@ -76,7 +76,7 @@ var allData;
 
 window.lang =  new Lang('de');
 window.lang.dynamic('en', 'lang/en.json');
-window.lang.dynamic('zh-s', 'lang/zh-s.json');
+window.lang.dynamic('zh-s', 'lang/en.json');
 
 var uiLang = window.localStorage.getItem('ui-lang') || "german";
 var dbLang = window.localStorage.getItem('db-lang') || "german";
