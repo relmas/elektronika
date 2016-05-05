@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="702.5" height="702.5">
+	<circle cx="351.25" cy="351.25" r="350" fill="#fff" stroke="#000" stroke-width="2.5"/>
+	<circle cx="351.25" cy="351.25" r="328" fill="#154889"/>
+	<path d="M 360.1875,189.1875 L 485.34375,314.5 L 86.5,314.5 v 73.28125 h 399.25 l -125.21875,125.375 h 92.34375 l 162.1875,-161.875 l -16.09375,0.21875 l 15.75,-0.4375 L 452.5,189.1875 z" fill="#fff"/>
+</svg>

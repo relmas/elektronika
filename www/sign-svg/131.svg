@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+   ***************************************************************************
+  
+   Bundesanstalt f_r Stra_enwesen
+  
+   StVO Zeichen Nr.: 131     
+  
+   Bezeichnung:
+   Lichtzeichenanlage
+  
+   Eingef_hrt durch:
+   Katalog der Verkehrszeichen - VzKat 1992 -
+  
+   Ausdehnung in cm:
+         X_min     X_max     Y_min     Y_max
+       -42.07180  42.07180   0.00000  73.94229
+-->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="405.05072"
+   height="356.28125"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="Zeichen_131.svg">
+  <metadata
+     id="metadata24">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs22">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 41.971146 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="94.1436 : 41.971146 : 1"
+       inkscape:persp3d-origin="47.0718 : 27.980764 : 1"
+       id="perspective26" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1309"
+     inkscape:window-height="901"
+     id="namedview20"
+     showgrid="false"
+     inkscape:zoom="1.9879991"
+     inkscape:cx="195.52533"
+     inkscape:cy="173.47074"
+     inkscape:window-x="-29"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <!--
+  
+   ***************************************************************************
+  
+-->
+  <path
+     d="M 20.111231,355.27999 A 19.165594,19.165594 0 0 1 3.5133386,326.53159 L 185.93051,10.57579 a 19.165594,19.165594 0 0 1 33.19578,0 l 182.41717,315.9558 a 19.165594,19.165594 0 0 1 -16.5979,28.7484 l -364.834329,0 z"
+     id="path4"
+     style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+     inkscape:connector-curvature="0" />
+  <path
+     d="M 20.111231,348.09289 A 11.978497,11.978497 0 0 1 9.7375465,330.12514 L 192.15471,14.169339 a 11.978497,11.978497 0 0 1 20.74736,0 L 395.31925,330.12514 a 11.978497,11.978497 0 0 1 -10.37369,17.96775 l -364.834329,0 z M 61.605986,312.1574 202.5284,68.072575 343.4508,312.1574 l -281.844814,0 z"
+     id="path6"
+     style="fill:#c1121c;fill-rule:evenodd;stroke:none;fill-opacity:1"
+     inkscape:connector-curvature="0" />
+  <!--
+      INHALT
+       RAND GRUEN
+-->
+  <path
+     d="m 228.88108,271.43051 a 26.352693,26.352693 0 0 0 -39.52903,-22.82211 26.352693,26.352693 0 0 0 0,45.6442 26.352693,26.352693 0 0 0 39.52903,-22.82209 z"
+     id="path8"
+     style="fill:#000000;fill-rule:evenodd;stroke:none"
+     inkscape:connector-curvature="0" />
+  <path
+     d="m 226.48539,271.43051 a 23.956992,23.956992 0 0 0 -35.93549,-20.74735 23.956992,23.956992 0 0 0 0,41.49471 23.956992,23.956992 0 0 0 35.93549,-20.74736 z"
+     id="path10"
+     style="fill:#008754;fill-rule:evenodd;stroke:none;fill-opacity:1"
+     inkscape:connector-curvature="0" />
+  <!--
+       RAND GELB
+-->
+  <path
+     d="m 228.88108,211.53803 a 26.352693,26.352693 0 0 0 -39.52903,-22.82211 26.352693,26.352693 0 0 0 0,45.6442 26.352693,26.352693 0 0 0 39.52903,-22.82209 z"
+     id="path12"
+     style="fill:#000000;fill-rule:evenodd;stroke:none"
+     inkscape:connector-curvature="0" />
+  <path
+     d="m 226.48539,211.53803 a 23.956992,23.956992 0 0 0 -35.93549,-20.74737 23.956992,23.956992 0 0 0 0,41.49473 23.956992,23.956992 0 0 0 35.93549,-20.74736 z"
+     id="path14"
+     style="fill:#f0ca00;fill-rule:evenodd;stroke:none;fill-opacity:1"
+     inkscape:connector-curvature="0" />
+  <!--
+       RAND ROT
+-->
+  <path
+     d="m 228.88108,151.64555 a 26.352693,26.352693 0 0 0 -39.52903,-22.82211 26.352693,26.352693 0 0 0 0,45.6442 26.352693,26.352693 0 0 0 39.52903,-22.82209 z"
+     id="path16"
+     style="fill:#000000;fill-rule:evenodd;stroke:none"
+     inkscape:connector-curvature="0" />
+  <path
+     d="m 226.48539,151.64555 a 23.956992,23.956992 0 0 0 -35.93549,-20.74737 23.956992,23.956992 0 0 0 0,41.49473 23.956992,23.956992 0 0 0 35.93549,-20.74736 z"
+     id="path18"
+     style="fill:#c1121c;fill-rule:evenodd;stroke:none;fill-opacity:1"
+     inkscape:connector-curvature="0" />
+</svg>

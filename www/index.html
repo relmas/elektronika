@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="lib/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="lib/css/animate.css">
+    <link rel="stylesheet" href="lib/font-awesome-4.4.0/css/font-awesome.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/myapp.css">
+    <link rel="stylesheet" href="css/ribbons.css">
+    <link rel="stylesheet" href="css/label.css">
+    <script type="text/javascript" src="lib/js/jquery-lang.js"></script>
+</head>
+<body class="platform-android platform-cordova platform-webview">
+<!-- Status bar overlay for fullscreen mode-->
+<div class="statusbar-overlay"></div>
+<!-- Panels overlay-->
+<div class="panel-overlay"></div>
+<!-- Left panel with reveal effect-->
+<div class="panel panel-left panel-reveal">
+    <div class="content-block-title" lang="de">Kategorie <div class="badge panel-badge"></div> </div>
+    <div class="list-block side-panel-list content-block">
+        <ul>
+            <li>
+                <a href="#" class="item-link list-button" onclick="showCategory(this);" lang="de" data-category="alle">Alle</a>
+            </li>
+            <li>
+                <a href="#" class="item-link list-button" onclick="showCategory(this);" lang="de" data-category="Gefahrenzeichen">Gefahrenzeichen</a>
+            </li>
+            <li>
+                <a href="#" class="item-link list-button" onclick="showCategory(this);" lang="de" data-category="Vorschriftzeichen">Vorschriftzeichen</a>
+            </li>
+            <li>
+                <a href="#" class="item-link list-button" onclick="showCategory(this);" lang="de" data-category="Richtzeichen">Richtzeichen</a>
+            </li>
+            <li>
+                <a href="#" class="item-link list-button" onclick="showCategory(this);" lang="de" data-category="Verkehrseinrichtungen">Verkehrseinrichtungen</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content-block-title" lang="de">Farbe <div class="badge panel-badge"></div></div>
+    <div class="list-block content-block">
+        <a href="#" class="button button-circle sign-white" data-id='white' onclick="toggleCheck(this);"></a>
+        <a href="#" class="button button-circle sign-red" data-id='red' onclick="toggleCheck(this);"></a>
+        <a href="#" class="button button-circle sign-blue" data-id='blue' onclick="toggleCheck(this);"></a>
+        <a href="#" class="button button-circle sign-yellow" data-id='yellow' onclick="toggleCheck(this);"></a>
+        <a href="#" class="button button-circle sign-black" data-id='black' onclick="toggleCheck(this);"></a>
+        <a href="#" class="button button-circle sign-green" data-id='green' onclick="toggleCheck(this);"></a>
+        <a href="#" class="button button-circle sign-gray" data-id='gray' onclick="toggleCheck(this);"></a>
+        <a href="#" class="button button-circle sign-orange" data-id='orange' onclick="toggleCheck(this);"></a>
+    </div>
+</div>
+<!-- Views-->
+<div class="views tabs">
+    <!-- Your main view, should have "view-main" class-->
+    <div id="cardTab" class="view view-main tab active" data-page="index">
+        <!-- Top Navbar-->
+        <div class="navbar">
+            <div data-page="index" class="navbar-inner">
+                <div class="left">
+                    <a href="#" class="link icon-only open-panel"><i class="fa fa-filter"></i></a>
+                </div>
+                <div class="center">
+                </div>
+                <!-- We have home navbar without left link-->
+                <div class="right sliding"><!-- Search bar -->
+                    <a href="#" class="link icon-only" onclick="openSearch();"><i class="fa fa-search"></i></a>
+                    <a href="#" class="link icon-only show-star-off" onclick="showStars();"><i class="fa fa-star-o"></i></a>
+                </div>
+                <div class="subnavbar index-subnavbar">
+                    <form class="searchbar">
+                        <div class="searchbar-input">
+                            <input type="search">
+                            <a href="#" class="searchbar-clear"></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+            <!-- Page, data-page contains page name-->
+            <div data-page="index" class="page with-subnavbar" id="main-page">
+                <!-- Search bar overlay-->
+                <div class="searchbar-overlay"></div>
+                <!-- Scrollable page content-->
+                <div class="page-content">
+                    <!-- This block will be displayed if nothing found -->
+
+                    <div class="center-block searchbar-not-found">
+                        <div class="animated slideInRight">
+                            <img src="sign-svg/old-car.svg">
+                        </div>
+                        <span lang="de">Keine Ergebnisse</span>
+                    </div>
+
+                    <div class="list-block cards-list list-block-search searchbar-found">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="examTab" class="view view-exam tab">
+        <div class="navbar">
+            <div data-page="exam-index" class="navbar-inner">
+                <div class="center" lang="de">
+                    Übungen
+                </div>
+            </div>
+        </div>
+        <div class="pages navbar-through toolbar-through">
+            <!-- Page, data-page contains page name-->
+            <div data-page="exam-index" class="page" id="exam-page">
+                <!-- Scrollable page content-->
+                <div class="page-content">
+                    <div class="card demo-card-header-pic">
+                        <div style="background-image:url('sign-svg/exam.jpg')" valign="bottom" class="card-header no-border" lang="de">
+                            Leistungstest
+                        </div>
+                        <div class="card-content">
+                            <div class="card-content-inner">
+                                <p lang="de">Praxis rundum genießen. Testen Sie Ihre Lernfortschritte in einem Leistungstest.</p>
+                            </div>
+                        </div>
+                        <div class="card-footer left-align-footer">
+                            <a href="#" class="link" onclick="showNextQuiz();"><i class="fa fa-arrow-right"></i> <span></span> <span lang="de">Werfen Sie einen Leistungstest</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutTab" class="view tab">
+        <div class="navbar">
+            <div data-page="about-index" class="navbar-inner">
+                <div class="center" lang="de">
+                    Einstellungen
+                </div>
+            </div>
+        </div>
+        <div class="pages navbar-through toolbar-through">
+            <!-- Page, data-page contains page name-->
+            <div data-page="about-index" class="page" id="about-page">
+                <!-- Scrollable page content-->
+                <div class="page-content">
+                    <div class="content-block-title"><i class="fa fa-language"></i> Language</div>
+                    <div class="content-block">
+                        <p lang="de">Datenbank ursprünglich in deutscher Sprache verfasst. Es wird in andere Sprachen via Goolge Translate übersetzt.</p>
+                    </div>
+                    <div class="list-block">
+                        <ul>
+                            <!-- Smart select item -->
+                            <li>
+                                <!-- Additional "smart-select" class -->
+                                <a href="#" class="item-link smart-select" data-back-on-select="true">
+                                    <!-- select -->
+                                    <select name="applanguage" onchange="changeUILang(this.options[this.selectedIndex].value);">
+                                        <option value="german" selected>Deutsch</option>
+                                        <option value="english">English</option>
+                                        <option value="s-chinese">简体中文</option>
+                                    </select>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <!-- Select label -->
+                                            <div class="item-title" lang="de">Benutzeroberfläche</div>
+                                            <!-- Selected value, not required -->
+                                            <div class="item-after" id="appLang"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- Smart select item -->
+                            <li>
+                                <!-- Additional "smart-select" class -->
+                                <a href="#" class="item-link smart-select" data-back-on-select="true">
+                                    <!-- select -->
+                                    <select name="dblanguage" onchange="changeDBLang(this.options[this.selectedIndex].value);">
+                                        <option value="german" selected>Deutsch</option>
+                                        <option value="english">English</option>
+                                        <option value="s-chinese">简体中文</option>
+                                    </select>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <!-- Select label -->
+                                            <div class="item-title" lang="de">Datenbank</div>
+                                            <!-- Selected value, not required -->
+                                            <div class="item-after" id="dbLang"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="content-block-title" lang="de"><i class="fa fa-info-circle"></i> Über VZ Guru</div>
+                    <div class="list-block">
+                        <ul>
+                            <!-- Smart select item -->
+                            <li>
+                                <!-- Additional "smart-select" class -->
+                                <a href="#" onclick="openAppRate();" class="item-link">
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <!-- Select label -->
+                                            <div class="item-title" lang="de">Bewerte diese App</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <!-- Additional "smart-select" class -->
+                                <a href="#" onclick="openOjins();" class="item-link">
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <!-- Select label -->
+                                            <div class="item-title" lang="de">Weitere Apps aus OJINS.COM</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <!-- Additional "smart-select" class -->
+                                <a href="#" onclick="openMail();" class="item-link">
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <!-- Select label -->
+                                            <div class="item-title" lang="de">Kontakt</div>
+                                            <!-- Selected value, not required -->
+                                            <div class="item-after">vzguru@ojins.com</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- Smart select item -->
+                            <li>
+                                <!-- Additional "smart-select" class -->
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <!-- Select label -->
+                                        <div class="item-title" lang="de">Version</div>
+                                        <!-- Selected value, not required -->
+                                        <div class="item-after">1.0.0</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Tabbar-->
+    <div class="toolbar tabbar">
+        <div class="toolbar-inner">
+            <a href="#cardTab" class="tab-link active"><i class="icon tabbar-cards"></i></a>
+            <a href="#examTab" class="tab-link" onclick="updateExamTab();"><i class="icon tabbar-exam"></i></a>
+            <a href="#aboutTab" class="tab-link"><i class="icon tabbar-about"></i></a>
+        </div>
+    </div>
+</div>
+
+
+<script id="summary-card-template" type="text/template7">
+    <div class="card animated flipInX" id="summary-card">
+        <div class="card-header">{{title}}</div>
+        <div class="card-content">
+            <div class="card-content-inner">
+                <div class="list-block">
+                    <ul>
+                        {{#each props}}
+                        <li class="item-content">
+                            <div class="item-media">{{icon}}</div>
+                            <div class="item-inner">
+                                <div class="item-title">{{name}}</div>
+                                <div class="item-after">{{value}}</div>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script id="item-template" type="text/template7">
+    <li class="card">
+        <div class="ribbon" data-id="{{id}}" onclick="toggleStar(this);"><span><i class="fa fa-star"></i></span></div>
+        <div class="addStarBtn" data-id="{{id}}" onclick="toggleStar(this);">
+            <a href="#" class="link icon-only"><i class="fa fa-star-o"></i></a>
+        </div>
+        <div class="card-header">
+            <div class="mylabel">{{id}}</div>
+            <div class="sign-name">{{name}}</div>
+        </div>
+        <div class="card-content">
+            <a href="#detail" class="item-link" onclick="openDetail('{{id}}');">
+                <div class="list-block media-list inside-card">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-media">
+                                <img class="card-sign-img" src="sign-svg/{{id}}.svg">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-subtitle">
+                                    {{short_meaning}}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </a>
+        </div>
+    </li>
+</script>
+
+<script id="list-template" type="text/template7">
+    <ul class="all-cards">
+        {{#each traffic_sign}}
+        <li class="card">
+            <div class="ribbon" data-id="{{id}}" onclick="toggleStar(this);"><span><i class="fa fa-star"></i></span></div>
+            <div class="addStarBtn" data-id="{{id}}" onclick="toggleStar(this);">
+                <a href="#" class="link icon-only"><i class="fa fa-star-o"></i></a>
+            </div>
+            <div class="card-header">
+                <div class="mylabel">{{id}}</div>
+                <div class="sign-name">{{name}}</div>
+            </div>
+            <div class="card-content">
+                <a href="#detail" class="item-link" onclick="openDetail('{{id}}');">
+                    <div class="list-block media-list inside-card">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-media">
+                                    <img class="card-sign-img" src="sign-svg/{{id}}.svg">
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-subtitle">
+                                        {{short_meaning}}
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+        </li>
+        {{else}}
+        <div class="center-block">
+            <div class="animated slideInRight">
+                <img src="sign-svg/old-car.svg">
+            </div>
+            <span lang="de">Keine Ergebnisse</span>
+        </div>
+        {{/each}}
+    </ul>
+</script>
+
+<script id="quiz1-template" type="text/template7">
+    <div class="navbar">
+        <div data-page="exam-quiz" class="navbar-inner">
+            <div class="left sliding"><a href="#" class="back link icon-only"><i class="fa fa-chevron-left"></i></a></div>
+            <div class="center sliding">{{title}}</div>
+            <div class="right sliding"><a href="#" class="forward link icon-only" onclick="showNextQuiz();"> <i class="fa fa-chevron-right"></i></a></div>
+        </div>
+    </div>
+    <div data-page="exam-quiz" class="page navbar-through toolbar-through">
+        <!-- Scrollable page content-->
+        <div class="page-content">
+            <div class="card animated flipInX">
+                <div class="card-header">{{text}}</div>
+                <div class="card-content">
+                    <div class="card-content-inner">
+                        {{description}}
+                    </div>
+                </div>
+            </div>
+            <div class="list-block inset">
+                <ul>
+                    {{#each answers}}
+                    <li class="answer-img-li" style="background-image: url('sign-svg/{{id}}.svg')" data-answerid="{{@index}}" data-iscorrect="{{isCorrect}}" onclick="showCorrect(this)">
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="quiz0-template" type="text/template7">
+    <div class="navbar">
+        <div data-page="exam-quiz" class="navbar-inner">
+            <div class="left sliding"><a href="#" class="back link icon-only"><i class="fa fa-chevron-left"></i></a></div>
+            <div class="center sliding">{{title}}</div>
+            <div class="right sliding"><a href="#" class="forward link icon-only" onclick="showNextQuiz();"> <i class="fa fa-chevron-right"></i></a></div>
+        </div>
+    </div>
+    <div data-page="exam-quiz" class="page navbar-through toolbar-through">
+        <!-- Scrollable page content-->
+        <div class="page-content">
+            <div class="card animated flipInX">
+                <div class="card-header">{{text}}</div>
+                <div class="card-content">
+                    <div class="card-content-inner center-block-row">
+                        <img src="sign-svg/{{id}}.svg" width="70%" style="max-height: 40vw;">
+                    </div>
+                </div>
+            </div>
+            <div class="list-block inset">
+                <ul>
+                    {{#each answers}}
+                    <li>
+                        <a href="#" class="item-link list-button answer-btn" data-answerid="{{@index}}" data-iscorrect="{{isCorrect}}" onclick="showCorrect(this)">{{text}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="detail-template" type="text/template7">
+    <div class="navbar">
+        <div data-page="detail" class="navbar-inner">
+            <div class="left sliding"><a href="#" class="back link icon-only"><i class="fa fa-chevron-left"></i></a></div>
+            <div class="center sliding">{{name}}</div>
+        </div>
+    </div>
+    <div data-page="detail" class="page">
+        <!-- Scrollable page content-->
+        <div class="page-content hide-bars-on-scroll detail-page">
+            <div class="content-block">{{graph}}</div>
+            <div class="content-block">
+                <div class="row no-gutter">
+                    <div class="col-10"></div>
+                    <div class="col-80"><img src="sign-svg/{{id}}.svg" width="100%" style="max-height: 50vh;" class="animated flipInY"></div>
+                    <div class="col-10"></div>
+                </div>
+            </div>
+            <div class="content-block-title">
+                <i class="fa fa-book"></i> {{subtitle1}}
+            </div>
+            <div class="content-block inset">
+                <div class="content-block-inner">{{long_mean}}</div>
+            </div>
+
+            <div class="content-block-title">
+                <i class="fa fa-check-square-o"></i> {{subtitle2}}
+            </div>
+            <div class="content-block inset">
+                <div class="content-block-inner">{{whattodo}}</div>
+            </div>
+            <div class="content-block-title">
+                <i class="fa fa-eur"></i> {{subtitle3}}
+            </div>
+            <div class="content-block inset">
+                <div class="content-block-inner">{{finefee}}</div>
+            </div>
+            <div class="content-block-title" lang="de">
+                <i class="fa fa-street-view"></i> {{subtitle4}}
+            </div>
+            <div class="content-block inset">
+                <div class="swiper-container swiper-init" data-slides-per-view="4" data-speed="400" data-space-between="20">
+                    <div class="swiper-wrapper">
+                        {{#each nearby_id}}
+                        <div class="swiper-slide" onclick="openDetail('{{this}}');"><img src="sign-svg/{{this}}.svg" width="100%"></div>
+                        {{/each}}
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="lib/js/framework7.js"></script>
+<script type="text/javascript" src="lib/js/js.cookie.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="js/main-tab.js"></script>
+<script type="text/javascript" src="js/exam-tab.js"></script>
+<script type="text/javascript" src="js/about-tab.js"></script>
+<script type="text/javascript" src="js/myapp.js"></script>
+<script type="text/javascript" src="js/myads.js"></script>
+<script type="text/javascript" src="lib/js/inobounce.js"></script>
+</body>
+</html>

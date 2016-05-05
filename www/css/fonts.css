@@ -1,0 +1,55 @@
+﻿/* normal */
+@font-face {
+    font-family: "intel-clear";
+    src: url("fonts/IntelClear_WLatn_Rg.ttf") format("truetype");
+    font-weight:normal;
+    font-style:normal;
+}
+/* bold */
+@font-face {
+    font-family: "intel-clear";
+    src: url("fonts/IntelClear_WLatn_Bd.ttf") format("truetype");
+    font-weight:bold;
+    font-style:normal;
+}
+/* italic */
+@font-face {
+    font-family: "intel-clear";
+    src: url("fonts/IntelClear_WLatn_It.ttf") format("truetype");
+    font-weight:normal;
+    font-style:italic;
+}
+/* bold italic */
+@font-face {
+    font-family: "intel-clear";
+    src: url("fonts/IntelClear_WLatn_BdIt.ttf") format("truetype");
+    font-weight:bold;
+    font-style:italic;
+}
+/* lighter */
+@font-face {
+    font-family: "intel-clear";
+    src: url("fonts/IntelClear_WLatn_Lt.ttf") format("truetype");
+    font-weight:200;
+    font-style:normal;
+}
+/* lighter italic */
+@font-face {
+    font-family: "intel-clear";
+    src: url("fonts/IntelClear_WLatn_LtIt.ttf") format("truetype");
+    font-weight:200;
+    font-style:italic;
+}
+/* IntelClear Pro */
+@font-face {
+    font-family: "intel-clear-pro";
+    src: url("fonts/IntelClearPro_W_Bd.ttf") format("truetype");
+    font-weight:bold;
+    font-style:normal;
+}
+@font-face {
+    font-family: "intel-clear-headline";
+    src: url("fonts/intel-clear-headline.woff") format("woff");
+    font-weight:bold;
+    font-style:normal;
+}

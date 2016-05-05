@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="90"
+   height="600"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <g
+     transform="matrix(-1,0,0,1,90,0)"
+     id="g5506">
+    <path
+       d="M 8.7178754,18.176536 L 8.3594592,593.64532 L 81.640541,593.64532 L 81.640541,37.651398 C 79.697336,18.951782 11.017157,-11.386972 8.7178754,18.176536 z "
+       style="fill:white;fill-opacity:1;fill-rule:evenodd;stroke:black;stroke-width:6.31341219px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path5478" />
+    <path
+       d="M 11.292453,104.01039 L 79.033127,145.58668 L 79.033127,287.1611 L 11.292453,244.50957 L 11.292453,104.01039 z"
+       style="fill:black;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path5480" />
+  </g>
+  <path
+     d="M 32.358904,248.46464 L 32.358904,146.97535 L 57.634684,146.97535 L 57.634684,248.46464 L 32.358904,248.46464 z "
+     style="fill:white;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path5510" />
+</svg>

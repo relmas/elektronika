@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="250" height="730">
+  <title>Zeichen 159 – zweistreifige Bake (links)</title>
+  <rect style="fill:white; fill-opacity:1; stroke:black; stroke-width:2px; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:none; stroke-opacity:1"
+        width="215.51418" height="718.8183" x="17.259365" y="5.5906959" rx="25" ry="25" />
+  <path d="M 31.53146,432.02665 L 218.34368,538.64635 L 218.34368,617.01635 L 29.7089,506.75155 L 31.53146,432.02665 z "
+        style="fill:#c00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  <path d="M 31.53146,273.00845 L 218.34368,379.62815 L 218.34368,457.99815 L 29.7089,347.73335 L 31.53146,273.00845 z "
+        style="fill:#c00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  <rect style="fill:none; stroke:black; stroke-width:7px; stroke-linecap:round;stroke-linejoin:round; stroke-dasharray:none; stroke-opacity:1"
+        width="192.30368" height="695.0387" x="28.510275" y="17.919878" rx="12" ry="12" />
+</svg>
